@@ -1,0 +1,81 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 14/08/2019, 06:30:06 PM
+    Author     : Anny Mora
+*/
+
+*{
+    list-style: none;
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+}
+
+.content-all{
+    /*background: #000;*/
+}
+
+.header{
+    background: url(img/chirripo.jpg);
+    background-size: cover;
+    box-shadow: 0 0 5px rgba(0,0,0,0.9);
+    overflow: hidden;
+    height: 600px;
+}
+
+.navbar{
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 50px;
+}
+
+.nav{
+    position: relative;
+}
+
+.nav ul{
+    display: flex;
+}
+
+.nav ul li{
+    color: #fff;
+    border-bottom: 1px solid #fff;
+    padding: 20px 40px;
+}
+
+.nav ul li:hover{
+    background: #f3881f;
+}
+
+.social ul{
+    display: flex;
+}
+
+.social ul li{
+    color: #fff;
+    padding: 0;
+}
+
+ul li a{
+    color: #fff;
+}
+
+.navbar .logo img {
+    width: 80px;
+}
+
+.text{
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    height: 100%;
+}
+
+.text h1{
+    color: #fff;
+}

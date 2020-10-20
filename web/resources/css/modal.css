@@ -1,0 +1,138 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 16/08/2019, 11:43:55 AM
+    Author     : Jeffrey Valerio
+*/
+
+
+.content-modal{
+    align-items: center;
+    background: rgba(0,0,0,0.8);
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    transition: all 600ms;
+    opacity: 0;
+    position: fixed;
+    visibility: hidden; 
+    width: 100%;
+
+}
+
+.content-modal:target{
+    background: rgba(0,0,0,0.8);
+    opacity: 1;
+    visibility: visible;
+}
+
+.popup{
+    align-items: center;
+    background: #fff;
+    border-radius: 3px;
+    display: flex;
+    flex-flow: column;
+    /*height: 550px;*/
+    left: -70px;
+    max-height: 550px;
+    max-width: 1000px;
+    padding: 20px 10px;
+    position: relative;
+    top: -70px;
+    /*width: 1000px;*/
+}
+
+.popup-two{
+    align-items: center;
+    background: #fff;
+    border-radius: 3px;
+    display: flex;
+    flex-flow: column;
+    left: -70px;
+    max-height: 600px;
+    max-width: 300px;
+    padding: 20px 10px;
+    position: relative;
+    top: -90px;
+    width: 500px;
+}
+
+.btn-close-popup{
+    align-items: center;
+    background: #E3170A;
+    border-radius: 50%;
+    color: white;
+    display: flex;
+    font-weight: bold;
+    justify-content: center;
+    line-height: 10px;
+    position: absolute;
+    padding: 15px;
+    right: -20px;
+    top: -20px;
+    width: 40px;
+}
+
+
+/*VENTA MODAL CREAR*/
+
+.table{
+    height: 100%;
+    padding: 10px;
+    width: 100%;
+}
+
+.table h5{
+    border-bottom: 2px solid #000;
+    font-size: 15px;
+    letter-spacing: 1px;
+    padding-top: 5px;
+    text-transform: uppercase;
+}
+
+.table .form{
+    color: #777;
+    display: flex;
+    font-size: 18px;
+    flex-flow: column;
+    padding: 10px 0 5px;
+    text-transform: uppercase; 
+}
+
+
+.form h5{
+    font-size: 18px;
+    font-weight: 100;
+    padding: 10px 0 5px;
+    text-transform: uppercase;
+}
+
+.form h6{
+    color: #777;
+    font-size: 18px;
+    padding: 10px 0 5px;
+    text-transform: uppercase;
+}
+
+/*-------------------------------*/
+/*ESTILO DE LOS INPUTS*/
+
+.form .ui-inputfield {
+    border: 1px solid #999;
+    box-shadow: none;
+    text-transform: uppercase;
+    width: 300px; 
+}
+
+/*ESTILO DEL BOTON*/
+.form .ui-button{
+    background: #95C623;
+    border: none;
+    font-weight: 300;
+    margin: 10px 0 0;
+    text-transform: uppercase;
+    width: 300px;
+}

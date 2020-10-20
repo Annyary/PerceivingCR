@@ -1,0 +1,92 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 16/08/2019, 11:32:37 AM
+    Author     : Jeffrey Valerio
+*/
+
+.showmodal{
+    align-items: center;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+}
+
+.showmodal .asigna{
+    align-self: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+}
+
+.tipo{
+    background: #CACFD3;
+    border: 1px solid #999;
+    padding: 10px;
+    margin: 2px;
+    width: 240px;
+}
+
+.tipo .name{
+    border-bottom: 1px solid #999;
+    padding: 5px 0; 
+}
+
+.name h3{
+    font-weight: 100;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.choose form{
+    padding: 20px;
+    text-transform: uppercase;
+}
+
+.choose form h3{
+    font-size: 18px;
+    font-weight: 100;
+    letter-spacing: 1px;
+    padding-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.ui-selectonemenu {
+    border: none;
+    box-shadow: none !important;
+    width: 100px;
+    /*padding: 10px;*/
+    margin: 10px 0;
+}
+
+
+
+/*ESTILOS DE LA CAJA DE ASIGNACION PARA CONFIRMAR*/
+.caja{
+    align-items: center;
+    border-bottom: 1px solid #999;
+    display: flex;
+    justify-content: space-around;
+    padding: 5px;
+}
+
+.formularios{
+    background: #CACFD3;
+    display: flex;
+    flex-flow: column;
+    margin: 2px;
+    padding: 10px;
+}
+
+.formularios .assignLink{
+    background: #95C623;
+    border: none;
+    font-weight: 300;
+    margin: 10px 0 0;
+    text-transform: uppercase;
+    width: 300px;
+}

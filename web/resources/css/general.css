@@ -1,0 +1,72 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 16/08/2019, 11:16:17 AM
+    Author     : Jeffrey Valerio
+*/
+
+
+@import url('https://fonts.googleapis.com/css?family=Fjalla+One&display=swap');
+
+*, :before, :after {
+    box-sizing: border-box;
+    color: #000;
+    margin: 0;
+    padding: 0;
+    font-family: 'Fjalla One', sans-serif !important;
+    list-style: none;
+    text-decoration: none;
+    text-shadow: none !important;
+}
+
+.content-all{
+    display: flex;
+    flex-flow: column;
+    height: 100vh;
+    position: absolute;
+    width: 100%;
+}
+
+/*INICIA CODIGO PARA CARGA*/
+#contenedor-carga{
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: rgba(10, 10, 10, 0.9);
+    height: 100%;
+    width: 100%; 
+    margin: 0 auto;
+    position: fixed;
+    z-index: 100;
+    -webkit-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    transition: all 1s ease;
+}
+
+#carga{
+    border: 15px solid #ccc;
+    border-top-color: #F4266A;
+    border-top-style: groove;
+    height: 100px; 
+    width: 100px;
+    border-radius: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    z-index: 100;
+    -webkit-animation: girar 1.5s linear infinite;
+    -o-animation: girar 1.5s linear infinite;
+    animation: girar 1.5s linear infinite;
+}
+@keyframes girar{
+    from{transform: rotate(0deg);}
+    to{transform: rotate(360deg);}
+}
+/*TERMINA CODIGO PARA CARGA*/   

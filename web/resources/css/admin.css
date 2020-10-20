@@ -1,0 +1,124 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 16/08/2019, 11:20:28 AM
+    Author     : Jeffrey Valerio
+*/
+
+
+.content{
+    display: flex;
+    height: 100vh;
+}
+
+/*INICIA ESTILO DEL MENU*/
+
+.menu{
+    align-items: center;
+    background: #f4f4f4;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-flow: column;
+    width: 270px;
+    z-index: 30;
+}
+
+.menu form{
+    width: 100%;
+}
+
+.menu h3{
+    letter-spacing: 2px;
+    padding: 12px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.ui-accordion{
+
+}
+
+.ui-content{
+    border: 1px solid red !important;
+}
+
+/*cabecera del accordion*/  
+.ui-accordion .ui-accordion-header{
+    background: #f4f4f4;
+    border-bottom: 1px solid #777;  
+    box-shadow: none !important;
+    font-family: sans-serif;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+.ui-accordion .ui-accordion-header:hover{
+    background: #BABECA;
+}
+
+.ui-accordion .ui-accordion-header:focus{
+    background: #BABECA;
+}
+
+.tab tbody{
+    font-family: "Open Sans", "Helvetica Neue", sans-serif !important;
+    display: flex;
+    flex-flow: column;
+}
+
+.menu ul{
+    border: 1px solid red;
+    display: flex;
+    flex-flow: column;
+}
+
+.menu ul li{
+    height: 50px;
+}
+
+/*FINALIZA ESTILO DEL MENU*/
+
+
+.nav{
+    background: #f4f4f4;
+}
+
+.box{
+    align-content: center;
+    background: #fff;
+    display: flex;
+    flex-flow: column;
+    height: 100%;
+    /*justify-content: center;*/
+    width: 100%;
+}
+
+.box .nav{
+    align-items: center;
+    box-shadow: 2px 0px 3px rgba(0, 0, 0, 0.3);
+    display: flex;
+    height: 60px;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+.box .nav a{
+    display: flex;
+}
+
+.nav a h4{
+    color: #777;
+    font-weight: 100;
+}
+
+.box .showmodal{
+    align-content: center;
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    /*width: 100%;*/
+}
+    

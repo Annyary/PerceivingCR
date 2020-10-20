@@ -1,0 +1,573 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Panel de administración</title>
+        <!--ESTILOS CSS-->
+        <h:outputStylesheet library="css" name="general.css"/>
+        <h:outputStylesheet library="css" name="header.css"/>
+        <h:outputStylesheet library="css" name="admin.css"/>
+        <h:outputStylesheet library="css" name="boxassign.css"/>
+        <h:outputStylesheet library="css" name="modal.css"/>
+        <h:outputStylesheet library="css" name="datatable.css"/>
+    </h:head>
+    <h:body>
+
+        <!--MUESTRA LOS MENSAJES-->
+        <p:growl id="growl" showDetail="true" life="5000" />
+
+        <!--INICIA CONTENT-ALL-->
+        <div class="content-all">
+
+            <!--DIV DE CARGA-->
+            <div id="contenedor-carga">
+                <div id="carga"></div>
+            </div>
+
+            <!--INICIAL EL HEADER-->
+            <header class="header">
+                <div class="headertitle">
+                    <img src="../resources/img/logo.png"/>
+                    <h1>Bienvenido al Panel de administración</h1>
+                </div>
+                <div class="exit">
+                    <p:link outcome="index.xhtml">
+                        <img src="../resources/img/exit.png"/>
+                    </p:link>
+                </div>
+            </header>
+            <!--FINALIZA EL HEADER-->
+
+            <!--INICIAL EL CONTENT-->
+            <div class="content">
+
+                <!--INICIA EL MENU LATERAL-->
+                <div class="menu">
+
+                    <!--INICIA FORMULARIO DEL MENU-->
+                    <h:form id="menuleft">
+                        <h3>Dashboard</h3>
+                        <p:accordionPanel class="panel" dynamic="true" multiple="false">
+
+                            <!-- INICIA TAB DEL USUARIO-->
+                            <p:tab title="Usuario">
+                                <h:panelGrid class="tab" columns="2" cellpadding="10">
+                                    <h:outputLink class="accordion" id="listUser" value="#modalListUser">
+                                        <h:outputText value="Mostrar todo" />
+                                    </h:outputLink>
+                                    <p:tooltip id="toolTip1" 
+                                               for="listUser" 
+                                               showEffect="clip"
+                                               hideEffect="explode"
+                                               value="Muestra todos los usuarios" 
+                                               position="left"/>
+
+                                    <h:outputLink id="createUser" value="#modalCreateUser">
+                                        <h:outputText value="Crear" />
+                                    </h:outputLink>
+                                    <p:tooltip id="toolTip2" 
+                                               for="createUser" 
+                                               showEffect="clip"
+                                               hideEffect="explode"
+                                               value="Crear nuevo usuario" 
+                                               position="left"/>
+                                </h:panelGrid>
+                            </p:tab>
+                            <!--FINALIZA EL TAB DEL USUARIO-->
+
+                            <!--INICIA EL TAB APLICACION-->
+                            <p:tab title="Applicación">
+                                <h:panelGrid class="tab" columns="2" cellpadding="10">
+                                    <h:outputLink class="accordion" id="listApp" value="#modalListApp">
+                                        <h:outputText value="Mostrar todo" />
+                                    </h:outputLink>
+                                    <p:tooltip id="toolTipapp1" 
+                                               for="listApp" 
+                                               showEffect="clip"
+                                               hideEffect="explode"
+                                               value="Muestra todas las aplicaciones" 
+                                               position="left"/>
+
+                                    <h:outputLink id="createApp" value="#modalCreateApp">
+                                        <h:outputText value="Crear" />
+                                    </h:outputLink>
+                                    <p:tooltip id="toolTipapp2" 
+                                               for="createApp" 
+                                               showEffect="clip"
+                                               hideEffect="explode"
+                                               value="Crear nueva aplicación" 
+                                               position="left"/>
+                                </h:panelGrid>
+                            </p:tab>
+                            <!--FINALIZA EL TAB DE APLICACION-->
+
+                            <!--INICIA EL TAB ROLES-->
+                            <p:tab title="Rol">
+                                <h:panelGrid class="tab" columns="2" cellpadding="10">
+
+                                    <h:outputLink class="accordion" id="listRol" value="#modalListRol">
+                                        <h:outputText value="Mostrar todo" />
+                                    </h:outputLink>
+                                    <p:tooltip id="toolTiprol1" 
+                                               for="listRol" 
+                                               showEffect="clip"
+                                               hideEffect="explode"
+                                               value="Muestra todos los roles" 
+                                               position="left"/>
+                                    <h:outputLink id="createRol" value="#modalCreateRol">
+                                        <h:outputText value="Crear" />
+                                    </h:outputLink>
+                                    <p:tooltip id="toolTiprol2" 
+                                               for="createRol" 
+                                               showEffect="clip"
+                                               hideEffect="explode"
+                                               value="Crear nuevo rol" 
+                                               position="left"/>
+                                </h:panelGrid>
+                            </p:tab>
+                            <!--FINALIZA EL TAB ROLES-->
+
+                            <!--INICIA EL TAB MODULOS-->
+                            <p:tab title="Módulo">
+                                <h:panelGrid class="tab" columns="2" cellpadding="10">
+
+                                    <h:outputLink id="listModule" value="#modalListModule">
+                                        <h:outputText value="Mostrar todo" />
+                                    </h:outputLink>
+                                    <p:tooltip id="toolTipmodule1" 
+                                               for="listModule" 
+                                               showEffect="clip"
+                                               hideEffect="explode"
+                                               value="Muestra todos los módulos" 
+                                               position="left"/>
+
+                                    <h:outputLink id="createModule" value="#modalCreateModule">
+                                        <h:outputText value="Crear" />
+                                    </h:outputLink>
+                                    <p:tooltip id="toolTipmodule2" 
+                                               for="createModule" 
+                                               showEffect="clip"
+                                               hideEffect="explode"
+                                               value="Crear nuevo módulo" 
+                                               position="left"/>
+                                </h:panelGrid>
+                            </p:tab>
+                            <!--MODULOS-->
+
+                            <!--FINALIZA EL TAB MODULOS-->
+                        </p:accordionPanel>
+                    </h:form>
+                    <!--TERMINA FORMULARIO DEL MENU-->
+
+                </div>
+                <!--FINALIZA EL MENU LATERAL-->
+
+                <!--INICIA LA VENTANA DE ASIGNACIONES-->
+                <div class="box">
+
+                    <!--NAV-->
+                    <div class="nav">
+                        <a href="admin.xhtml">
+                            <h4>Dashboard</h4>
+                        </a>
+                    </div>
+                    <!--NAV-->
+
+                    <!--INICIA VENTANA QUE MUESTRA LAS MODALES-->
+                    <div class="showmodal">
+                        <div class="asigna">
+                            <!--INICIA CUADRO DE USUARIOS-->
+                            <div class="tipo">
+                                <div class="name">
+                                    <h3>USUARIO</h3>
+                                </div>
+                                <div class="choose">
+                                    <h:form id="fusuario">
+                                        <h3>Elija el usuario</h3>
+                                        <p:selectOneMenu id="user" value="#{userController.user.idUser}"  panelStyle="width:200px"
+                                                         effect="fade" var="u" style="width:160px" filter="true" filterMatchMode="startsWith">
+                                            <f:selectItem itemLabel="Seleccione" itemValue="" noSelectionOption="true"/>
+                                            <f:selectItems value="#{userController.listUser}" var="user" itemLabel="#{user.name}" itemValue="#{user.idUser}" />
+                                            <f:ajax execute="user" render="formU:idUserT"/>
+                                        </p:selectOneMenu>
+                                    </h:form>
+                                </div>
+                            </div>
+                            <!--FINALIZA CUADRO DE USUARIOS-->
+
+                            <!--INICIA CUADRO DE APLICACIONES-->
+                            <div class="tipo">
+                                <div class="name">
+                                    <h3>Aplicación</h3>
+                                </div>
+                                <div class="choose">
+                                    <h:form id="fapplication">
+                                        <h3>Asigne la aplicacion</h3>
+                                        <p:selectOneMenu id="app" value="#{userController.app.id}"  panelStyle="width:200px"
+                                                         effect="fade" var="u" style="width:160px" filter="true" filterMatchMode="startsWith">
+                                            <f:selectItem itemLabel="Seleccione" itemValue="" noSelectionOption="true"/>
+                                            <f:selectItems id="userJS" value="#{userController.listApp}" var="app" itemLabel="#{app.application_name}" itemValue="#{app.id}" />
+                                            <f:ajax execute="app" render="formU:idAppT"/>
+                                        </p:selectOneMenu>
+                                    </h:form>
+                                </div>
+                            </div>
+                            <!--FINALIZA EL CUADRO DE APLICACIONES-->
+
+                            <!--INICIA CUADRO DE ROLES-->
+                            <div class="tipo">
+                                <div class="name">
+                                    <h3>ROL</h3>
+                                </div>
+                                <div class="choose">
+                                    <h:form id="frol">
+                                        <h3>Asigne el Rol</h3>
+                                        <p:selectOneMenu id="rol" value="#{userController.rol.idRol}"  panelStyle="width:200px"
+                                                         effect="fade" var="r" style="width:160px" filter="true" filterMatchMode="startsWith">
+                                            <f:selectItem itemLabel="Seleccione" itemValue="" noSelectionOption="true"/>
+                                            <f:selectItems id="rolJS" value="#{userController.listRol}" var="rol" itemLabel="#{rol.rol_name}" itemValue="#{rol.idRol}" />
+                                            <f:ajax execute="rol" render="formU:idRolT"/>
+                                        </p:selectOneMenu>
+                                    </h:form>
+                                </div>
+                            </div>
+                            <!--FINALIZA CUADRO DE ROLES-->
+
+                            <!--INICIA CUADRO DE MODULOS-->
+                            <div class="tipo">
+                                <div class="name">
+                                    <h3>MÓDULO</h3>
+                                </div>
+                                <div class="choose">
+                                    <h:form id="fmodule">
+                                        <h3>Asigne módulos</h3>
+                                        <p:selectOneMenu id="module" value="#{userController.module.idModule}"  panelStyle="width:200px"
+                                                         effect="fade" var="m" style="width:160px" filter="true" filterMatchMode="startsWith">
+                                            <f:selectItem itemLabel="Seleccione" itemValue="" noSelectionOption="true"/>
+                                            <f:selectItems id="moduleJS" value="#{userController.listModule}" var="module" itemLabel="#{module.module_name}" itemValue="#{module.idModule}" />
+                                            <f:ajax execute="module" render="formU:idModuleT"/>
+                                        </p:selectOneMenu>
+                                    </h:form>
+                                </div>
+                            </div>
+                            <!--FINALIZA CUADRO DE MODULOS-->
+
+                            <!--INICIA CUADRO DE FUNCIONES-->
+                            <div class="tipo">
+                                <div class="name">
+                                    <h3>FUNCIONES</h3>
+                                </div>
+                                <div class="choose">
+                                    <h:form>
+                                        <h3>Asigne Funciones</h3>
+                                        <p:selectOneMenu id="function" value="#{userController.function.idFunction}"  panelStyle="width:200px"
+                                                         effect="fade" var="f" style="width:160px" filter="true" filterMatchMode="startsWith">
+                                            <f:selectItem itemLabel="Seleccione" itemValue="" noSelectionOption="true"/>
+                                            <f:selectItems id="FunctionJS" value="#{userController.listFuncionalities}" var="function" itemLabel="#{function.function_name}" itemValue="#{function.idFunction}" />
+                                            <f:ajax execute="module" render="formU:idFunctionT"/>
+                                        </p:selectOneMenu>
+                                    </h:form>
+                                </div>
+                            </div>
+                            <!--FINALIZA CUADRO DE FUNCIONES-->
+
+                        </div>
+
+                        <div class="caja">
+                            <div class="formularios">
+                                <h:form id="formU">
+                                    <p:inputText id="idUserT" type="hidden" value="#{userController.user.idUser}" />
+                                    <p:inputText id="idAppT" type="hidden" value="#{userController.app.id}"/>
+                                    <p:inputText id="idRolT" type="hidden" value="#{userController.rol.idRol}"/>
+                                    <p:inputText id="idModuleT" type="hidden" value="#{userController.module.idModule}"/>
+                                    <p:inputText id="idFunctionT" type="hidden" value="#{userController.function.idFunction}"/>
+                                    <p:commandLink id="assignLink" value="ASIGNAR" action="#{userController.assign()}"/>
+                                </h:form>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!--FINALIZA VENTANA QUE MUESTRA LAS MODALES-->
+
+                </div>
+                <!--FINALIZA LA VENTANA DE ASIGNACIONES-->
+
+                <!--INICIA LAS VENTANAS MODALES-->
+
+
+                <!--INICIA VENTANAS DE LISTAR-->
+                <!--    VENTANA MODAL LISTAR USUARIO   -->
+                <div class="content-modal" id="modalListUser">
+                    <div class="popup">
+                        <a href="#" class="btn-close-popup">X</a>
+                        <div class="table">
+                            <h:form id="flistusuario">
+                                <p:dataTable var="user" value="#{userController.listUser}" widgetVar="usersTable"
+                                             emptyMessage="No existe ningún usuario" filteredValue="#{userController.filteredUser}">
+
+                                    <f:facet name="header">
+                                        <p:outputPanel>
+                                            <h:outputText value="Buscar Usuario: " />
+                                            <p:inputText id="globalFilter" onkeyup="PF('usersTable').filter()" style="width:150px" placeholder="Digite su búsqueda"/>
+                                        </p:outputPanel>
+                                    </f:facet>
+
+                                    <p:column filterBy="#{user.name}" headerText="Nombre" filterMatchMode="contains">
+                                        <h:outputText value="#{user.name}" />
+                                    </p:column>
+
+                                    <p:column filterBy="#{user.lastname}" headerText="Apellido"  filterMatchMode="contains">
+                                        <h:outputText value="#{user.lastname}" />
+                                    </p:column>
+
+                                    <p:column filterBy="#{user.email}" headerText="Correo"  filterMatchMode="contains">
+                                        <h:outputText value="#{user.email}" />
+                                    </p:column>
+
+                                    <p:column filterBy="#{user.user_name}" headerText="Usuario" filterMatchMode="contains">
+                                        <h:outputText value="#{user.user_name}" />
+                                    </p:column>
+
+                                    <p:column filterBy="#{user.status}" headerText="Status"  filterMatchMode="contains">
+                                        <h:outputText value="#{user.status}" />
+                                    </p:column>
+
+                                </p:dataTable>
+                            </h:form>
+                        </div>
+                    </div>
+                    <!--FINALIZA EL POPUP-->
+                </div>
+                <!--    FINALIZA LA VENTANA MODAL DE USUARIO    -->
+
+                <!--    VENTANA MODAL LISTAR APPS   -->
+                <div class="content-modal" id="modalListApp">
+                    <div class="popup-two">
+                        <a href="#" class="btn-close-popup">X</a>
+                        <div class="table">
+                            <h:form id="flistapp">
+                                <p:dataTable var="app" value="#{appController.listApp}" widgetVar="appsTable"
+                                             emptyMessage="No existe ninguna aplicación" filteredValue="#{appController.filteredApp}">
+                                    <p:column filterBy="#{app.application_name}" headerText="Nombre de aplicación" filterMatchMode="contains">
+                                        <h:outputText value="#{app.application_name}" />
+                                    </p:column>
+                                </p:dataTable>
+                            </h:form>
+                        </div>
+                    </div>
+                    <!--FINALIZA EL POPUP-->
+                </div>
+                <!--    FINALIZA LA VENTANA MODAL APPS    -->
+
+                <!--    VENTANA MODAL LISTAR ROLES   -->
+                <div class="content-modal" id="modalListRol">
+                    <div class="popup-two">
+                        <a href="#" class="btn-close-popup">X</a>
+                        <div class="table">
+                            <h:form id="flistrol">
+                                <p:dataTable var="rol" value="#{rolController.listRoles}" widgetVar="appsTable"
+                                             emptyMessage="No existe ninguna aplicación" filteredValue="#{rolController.filteredRol}">
+                                    <p:column filterBy="#{rol.rol_name}" headerText="Nombre de rol" filterMatchMode="contains">
+                                        <h:outputText value="#{rol.rol_name}" />
+                                    </p:column>
+                                </p:dataTable>
+                            </h:form>
+                        </div>
+                    </div>
+                    <!--FINALIZA EL POPUP-->
+                </div>
+                <!--    FINALIZA LA VENTANA MODAL ROLES    -->
+
+                <!--    VENTANA MODAL LISTAR MODULOS   -->
+                <div class="content-modal" id="modalListModule">
+                    <div class="popup-two">
+                        <a href="#" class="btn-close-popup">X</a>
+                        <div class="table">
+                            <h:form id="flistmodule">
+                                <p:dataTable var="module" value="#{moduleController.listModule}" widgetVar="modulesTable"
+                                             emptyMessage="No existe ningún módulo" filteredValue="#{moduleController.filteredModule}">
+                                    <p:column filterBy="#{module.module_name}" headerText="Nombre de módulo" filterMatchMode="contains">
+                                        <h:outputText value="#{module.module_name}" />
+                                    </p:column>
+                                </p:dataTable>
+                            </h:form>
+                        </div>
+                    </div>
+                    <!--FINALIZA EL POPUP-->
+                </div>
+                <!--    FINALIZA LA VENTANA MODAL MODULOS    -->
+
+                <!--FINALIZA VENTANAS DE LISTAR-->
+
+                <!--INICIA VENTANAS DE "CREAR"-->
+
+                <!--VENTANA MODAL CREAR USUARIO-->
+                <div class="content-modal" id="modalCreateUser">
+                    <div class="popup">
+                        <a href="#" class="btn-close-popup">X</a>
+                        <div class="table">
+                            <h5>Crear nuevo usuario</h5>
+                            <h:form class="form" id="formUser">
+                                <h6>NOMBRE</h6>
+                                <p:inputText
+                                    id="name" type="text"
+                                    value="#{userController.user.name}"
+                                    required="true"
+                                    requiredMessage="Ingrese el nombre"/>
+                                <h6>Apellidos</h6> 
+
+                                <p:inputText
+                                    id="lastname" type="text"
+                                    value="#{userController.user.lastname}"
+                                    required="true"
+                                    requiredMessage="Ingrese los apellidos"/>
+
+                                <h6>Correo</h6>
+                                <p:inputText 
+                                    id="email" type="email"
+                                    value="#{userController.user.email}"
+                                    required="true"
+                                    requiredMessage="Ingrese el correo"/>
+
+                                <h6>Usuario</h6>
+                                <p:inputText
+                                    id="username" type="text"
+                                    value="#{userController.user.user_name}"
+                                    required="true"
+                                    requiredMessage="Ingrese el usuario"/>
+
+                                <h6>Contraseña</h6>
+                                <p:password id="password" value="#{userController.user.password}" feedback="true"
+                                            required="true"
+                                            requiredMessage="Ingrese la contraseña"/>
+
+                                <p:commandButton id="create"
+                                                 value="Crear usuario"
+                                                 update="growl"
+                                                 action="#{userController.createUser()}">
+                                    <f:ajax execute="formUser" render="fusuario"/>
+                                </p:commandButton> 
+
+                            </h:form>
+                        </div>
+                    </div>
+                </div>
+                <!--FINALIZA VENTANA MODAL CREAR USUARIO-->
+
+                <!--    VENTANA MODAL CREAR APP -->
+                <div class="content-modal" id="modalCreateApp">
+                    <div class="popup">
+                        <a href="#" class="btn-close-popup">X</a>
+                        <div class="table">
+                            <h5>Crear nueva aplicación</h5>
+                            <h:form class="form" id="formApp">
+                                <h6>NOMBRE</h6>
+                                <p:inputText
+                                    id="name" type="text"
+                                    value="#{appController.app.application_name}"
+                                    required="true"
+                                    requiredMessage="Ingrese el nombre"/>
+                                <p:commandButton id="createApp"
+                                                 value="Crear aplicación"
+                                                 update="growl"
+                                                 action="#{appController.createApp()}">
+                                    <f:ajax execute="formApp" render="fapplication"/>
+                                </p:commandButton> 
+                            </h:form>
+                        </div>
+                    </div>
+                </div>
+                <!--FINALIZA VENTANA MODAL CREAR APP-->
+
+                <!--    VENTANA MODAL CREAR ROL -->
+                <div class="content-modal" id="modalCreateRol">
+                    <div class="popup">
+                        <a href="#" class="btn-close-popup">X</a>
+                        <div class="table">
+                            <h5>Crear nuevo Rol</h5>
+                            <h:form class="form" id="formRol">
+                                <h6>NOMBRE</h6>
+                                <p:inputText
+                                    id="name" type="text"
+                                    value="#{rolController.rol.rol_name}"
+                                    required="true"
+                                    requiredMessage="Ingrese el nombre"/>
+
+                                <p:commandButton id="createRol"
+                                                 value="Crear Rol"
+                                                 update="growl"
+                                                 action="#{rolController.createApp()}">
+                                    <f:ajax execute="formRol" render="frol"/>
+                                </p:commandButton> 
+                            </h:form>
+                        </div>
+                    </div>
+                </div>
+                <!--FINALIZA VENTANA MODAL CREAR ROL-->
+
+                <!--    VENTANA MODAL CREAR MODULO -->
+                <div class="content-modal" id="modalCreateModule">
+                    <div class="popup">
+                        <a href="#" class="btn-close-popup">X</a>
+                        <div class="table">
+                            <h5>Crear nuevo módulo</h5>
+                            <h:form class="form" id="formModulo">
+                                <h6>NOMBRE</h6>
+                                <p:inputText
+                                    id="name" type="text"
+                                    value="#{BeanController.module.module_name}"
+                                    required="true"
+                                    requiredMessage="Ingrese el nombre"/>
+
+                                <p:commandButton id="createModule"
+                                                 value="Crear módulo"
+                                                 update="growl"
+                                                 action="#{moduleController.createModule()}">
+                                    <f:ajax execute="formModulo" render="fmodule"/>
+                                </p:commandButton> 
+                            </h:form>
+                        </div>
+                    </div>
+                </div>
+                <!--FINALIZA VENTANA MODAL CREAR MODULO-->
+
+                <!--FINALIZA VENTANAS DE "CREAR"-->
+
+                <!--FINALIZA LAS VENTANAS MODALES-->
+
+
+
+            </div>
+            <!--FINALIZA EL CONTENT-->
+
+        </div>
+        <!--FINALIZA CONTENT-ALL-->
+
+
+
+        <script> // Funcion del circulo de carga
+            window.onload = function () {
+                var contenedor = document.getElementById('contenedor-carga');
+                contenedor.style.visibility = 'hidden';
+                contenedor.style.opacity = '0';
+            };
+        </script>
+
+        <!--FUNCION JS PARA TOMAR LOS ID E INSERTARLOS EN LAS ASIGNACIONES-->
+        <script>
+            function assign() {
+//                SELECCIONANDO LOS ID
+                var idUserJS = document.getElementById('formU:idUserT').value;
+                var idAppJS = document.getElementById('formU:idAppT').value;
+                var idRolJS = document.getElementById('formU:idRolT').value;
+                var idModuleJS = document.getElementById('formU:idModuleT').value;
+                var idFunctionJS = document.getElementById('formU:idFunctionT').value;
+                var hacerClick = document.getElementById("formularios:assignLink");
+                hacerClick.click();
+            }
+        </script>
+    </h:body>
+</html>
