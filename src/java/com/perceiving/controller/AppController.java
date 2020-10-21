@@ -19,7 +19,7 @@ import javax.faces.model.SelectItem;
 
 /**
  *
- * @author Jeffrey Valerio BEAN PARA ADMINISTRAR LA INTERACCION CON APLICACION
+ * @author Anny Mora
  */
 @ManagedBean(name = "appController")
 @SessionScoped
