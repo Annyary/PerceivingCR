@@ -18,7 +18,7 @@ import javax.faces.context.FacesContext;
 
 /**
  *
- * @author Jeffrey Valerio BEAN PARA ADMINISTRAR LA INTERACCION CON ROLES
+ * @author Anny Mora
  */
 @ManagedBean(name = "rolController")
 @ViewScoped
