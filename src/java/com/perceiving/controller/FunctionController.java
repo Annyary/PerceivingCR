@@ -17,7 +17,7 @@ import javax.faces.context.FacesContext;
 
 /**
  *
- * @author Jeffrey Valerio
+ * @author Anny Mora
  */
 @ManagedBean
 @ViewScoped
