@@ -26,7 +26,7 @@ import javax.faces.context.FacesContext;
 
 /**
  *
- * @author Jeffrey Valerio BEAN PARA ADMINISTRAR LA INTERACCION CON EL USUARIO
+ * @author Anny Mora 
  */
 @ManagedBean(name = "userController")
 @ViewScoped
