@@ -17,7 +17,7 @@ import javax.faces.context.FacesContext;
 
 /**
  *
- * @author Jeffrey Valerio BEAN PARA EL MANEJO DE MODULES
+ * @author Anny Mora
  */
 @ManagedBean
 @ViewScoped
